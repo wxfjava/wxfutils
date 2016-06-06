@@ -11,24 +11,27 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
+/**
+ * 查找某个excel文件的密码知道组成结构
+ * @author wxf
+ *
+ */
 public class ExcelTest {
     
     public static void main(String[] args) {
         for (int i=100; i<1000; i++){
             try {
-                readFile("wangxingfeng"+i);
+                readFile("abc"+i);
             } catch (Exception e) {
                 
             }
-            
         }
-        
     }
 
     private static void readFile(String password) throws IOException, FileNotFoundException {
         System.out.println(password);
         Biff8EncryptionKey.setCurrentUserPassword(password);
-        Workbook workbook = new HSSFWorkbook(new FileInputStream("/Users/WangXingFeng/Downloads/chrome/a.xls")); 
+        Workbook workbook = new HSSFWorkbook(new FileInputStream("/xxxxxxxxxx/a.xls")); 
         
         Sheet sheet = workbook.getSheetAt(0);
         Row row = sheet.getRow(0);
